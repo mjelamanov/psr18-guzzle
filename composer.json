@@ -1,0 +1,42 @@
+{
+    "name": "mjelamanov/psr18-guzzle",
+    "description": "A PSR-18 adapter for guzzle 6 client",
+    "keywords": [
+        "PSR-18", "guzzle", "http", "http-client"
+    ],
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.0",
+        "psr/http-client": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "provide": {
+        "psr/http-client": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mirlan Jelamanov",
+            "email": "mirlan.jelamanov@gmail.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Mjelamanov\\GuzzlePsr18\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mjelamanov\\GuzzlePsr18\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit tests"
+    }
+}
