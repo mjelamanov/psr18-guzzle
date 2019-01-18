@@ -7,9 +7,7 @@ use Psr\Http\Message\RequestInterface;
 use Throwable;
 
 /**
- * Class NetworkException
- *
- * @package Mjelamanov\GuzzlePsr18\Exception
+ * Class NetworkException.
  */
 class NetworkException extends GuzzleException implements NetworkExceptionInterface
 {

@@ -20,9 +20,7 @@ use Psr\Http\Client\RequestExceptionInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class ClientTest
- *
- * @package Mjelamanov\GuzzlePsr18
+ * Class ClientTest.
  */
 class ClientTest extends TestCase
 {
@@ -34,7 +32,7 @@ class ClientTest extends TestCase
     public function testSendRequest()
     {
         $guzzleClient = new GuzzleClient([
-            'handler' => MockHandler::createWithMiddleware([new Response()])
+            'handler' => MockHandler::createWithMiddleware([new Response()]),
         ]);
 
         $request = new Request('GET', 'http://example.com');
@@ -58,7 +56,7 @@ class ClientTest extends TestCase
         $guzzleClient = new GuzzleClient([
             'handler' => MockHandler::createWithMiddleware([function () use ($request) {
                 throw new ConnectException('Could not connect to the target', $request);
-            }])
+            }]),
         ]);
 
         $client = new Client($guzzleClient);
@@ -113,7 +111,7 @@ class ClientTest extends TestCase
         $guzzleClient = new GuzzleClient([
             'handler' => MockHandler::createWithMiddleware([function () use ($request) {
                 throw new RequestException('Test exception', $request);
-            }])
+            }]),
         ]);
 
         $client = new Client($guzzleClient);
@@ -135,7 +133,7 @@ class ClientTest extends TestCase
         $guzzleClient = new GuzzleClient([
             'handler' => MockHandler::createWithMiddleware([function () use ($request) {
                 throw new TransferException('Test exception');
-            }])
+            }]),
         ]);
 
         $client = new Client($guzzleClient);
@@ -157,7 +155,7 @@ class ClientTest extends TestCase
         $guzzleClient = new GuzzleClient([
             'handler' => MockHandler::createWithMiddleware([function () use ($request) {
                 throw new InvalidArgumentException('Request is invalid');
-            }])
+            }]),
         ]);
 
         $client = new Client($guzzleClient);

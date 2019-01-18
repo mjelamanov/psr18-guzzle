@@ -6,11 +6,8 @@ use Psr\Http\Client\ClientExceptionInterface;
 use RuntimeException;
 
 /**
- * Class GuzzleException
- *
- * @package Mjelamanov\GuzzlePsr18\Exception
+ * Class GuzzleException.
  */
 class GuzzleException extends RuntimeException implements ClientExceptionInterface
 {
-
 }

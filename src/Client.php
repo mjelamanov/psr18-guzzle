@@ -14,9 +14,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class Client
- *
- * @package Mjelamanov\GuzzlePsr18
+ * Class Client.
  */
 class Client implements ClientInterface
 {
@@ -36,7 +34,7 @@ class Client implements ClientInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function sendRequest(RequestInterface $request): ResponseInterface
     {
