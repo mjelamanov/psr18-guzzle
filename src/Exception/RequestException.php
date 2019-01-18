@@ -7,9 +7,7 @@ use Psr\Http\Message\RequestInterface;
 use Throwable;
 
 /**
- * Class RequestException
- *
- * @package Mjelamanov\GuzzlePsr18\Exception
+ * Class RequestException.
  */
 class RequestException extends GuzzleException implements RequestExceptionInterface
 {

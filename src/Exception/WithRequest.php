@@ -5,9 +5,7 @@ namespace Mjelamanov\GuzzlePsr18\Exception;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * Trait WithRequest
- *
- * @package Mjelamanov\GuzzlePsr18\Exception
+ * Trait WithRequest.
  */
 trait WithRequest
 {
@@ -17,7 +15,7 @@ trait WithRequest
     protected $request;
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getRequest(): RequestInterface
     {
