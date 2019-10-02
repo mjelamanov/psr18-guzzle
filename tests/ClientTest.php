@@ -94,9 +94,9 @@ class ClientTest extends TestCase
 
         $client = new Client($guzzleClient);
 
-        $response = $client->sendRequest($request);
+        $response1 = $client->sendRequest($request);
 
-        $this->assertEquals($status, $response->getStatusCode());
+        $this->assertEquals($status, $response1->getStatusCode());
     }
 
     /**
@@ -174,7 +174,6 @@ class ClientTest extends TestCase
             [TooManyRedirectsException::class, new Response(302), 302],
             [ClientException::class, new Response(400), 400],
             [ServerException::class, new Response(500), 500],
-            [RequestException::class, new Response(600), 600],
         ];
     }
 }
