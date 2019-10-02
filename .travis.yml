@@ -7,21 +7,37 @@ php:
   - 7.1
   - 7.2
   - 7.3
-  - nightly
+  - 7.4snapshot
+
+env:
+  matrix:
+    - PHPUNIT=^6.5
+    - PHPUNIT=^7.0
+    - PHPUNIT=^8.0
+
+matrix:
+  fast_finish: true
+  exclude:
+    - php: 7.0
+      env: PHPUNIT=^7.0
+    - php: 7.0
+      env: PHPUNIT=^8.0
+    - php: 7.1
+      env: PHPUNIT=^8.0
+
+cache:
+  directories:
+    - $HOME/.composer/cache
 
 branches:
   only:
     - master
 
-before_script:
-  - composer self-update --no-progress --no-interaction --quiet
-  - composer install --no-interaction --prefer-source
+before_install:
+  - phpenv config-rm xdebug.ini || true
 
-script: composer test
+install:
+  - travis_retry composer require "phpunit/phpunit:${PHPUNIT}" --dev --prefer-dist --no-interaction --no-suggest
+  - travis_retry composer install --prefer-dist --no-interaction --no-suggest
 
-deploy:
-  provider: releases
-  api_key: $GITHUB_OAUTH_TOKEN
-  skip_cleanup: true
-  on:
-    tags: true
+script: vendor/bin/phpunit
