@@ -9,22 +9,6 @@ php:
   - 7.3
   - 7.4
 
-env:
-  matrix:
-    - PHPUNIT=^6.5
-    - PHPUNIT=^7.0
-    - PHPUNIT=^8.0
-
-matrix:
-  fast_finish: true
-  exclude:
-    - php: 7.0
-      env: PHPUNIT=^7.0
-    - php: 7.0
-      env: PHPUNIT=^8.0
-    - php: 7.1
-      env: PHPUNIT=^8.0
-
 cache:
   directories:
     - $HOME/.composer/cache
@@ -37,7 +21,6 @@ before_install:
   - phpenv config-rm xdebug.ini || true
 
 install:
-  - travis_retry composer require "phpunit/phpunit:${PHPUNIT}" --dev --prefer-dist --no-interaction --no-suggest
   - travis_retry composer install --prefer-dist --no-interaction --no-suggest
 
 script: vendor/bin/phpunit
