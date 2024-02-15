@@ -168,7 +168,7 @@ class ClientTest extends TestCase
     /**
      * @return array
      */
-    public function httpExceptionsProvider(): array
+    public static function httpExceptionsProvider(): array
     {
         return [
             [TooManyRedirectsException::class, new Response(302), 302],
