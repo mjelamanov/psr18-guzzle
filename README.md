@@ -1,6 +1,6 @@
 # PSR-18 adapter for Guzzle 6
 
-[![Build Status](https://travis-ci.com/mjelamanov/psr18-guzzle.svg?branch=master)](https://travis-ci.com/mjelamanov/psr18-guzzle)
+[![Build Status](https://api.travis-ci.com/mjelamanov/psr18-guzzle.svg?branch=master)](https://travis-ci.com/mjelamanov/psr18-guzzle)
 [![StyleCI](https://github.styleci.io/repos/166253002/shield?branch=master)](https://github.styleci.io/repos/166253002)
 [![Latest Stable Version](https://poser.pugx.org/mjelamanov/psr18-guzzle/v/stable)](https://packagist.org/packages/mjelamanov/psr18-guzzle)
 [![Total Downloads](https://poser.pugx.org/mjelamanov/psr18-guzzle/downloads)](https://packagist.org/packages/mjelamanov/psr18-guzzle)
