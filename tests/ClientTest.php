@@ -13,6 +13,7 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use InvalidArgumentException;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\NetworkExceptionInterface;
@@ -77,6 +78,7 @@ class ClientTest extends TestCase
      *
      * @dataProvider httpExceptionsProvider
      */
+    #[DataProvider('httpExceptionsProvider')]
     public function testSendRequestWhenItThrowsHttpException(
         string $exception,
         ResponseInterface $response,
